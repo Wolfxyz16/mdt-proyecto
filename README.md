@@ -1,13 +1,23 @@
 # Proyecto Mineria de Datos Textuales
 
-## 1. Formular una pregunta de investigación relacionada con el análisis de emociones que se pueda investigar en una red social (Mastodon, Facebook, etc.)
-* ¿Qué emociones aparecen más en las redes sociales cuando se habla de inmigración?
-* Cuando se habla de ChatGPT, ¿qué emoción surge más en Mastodon: miedo, esperanza, tristeza o alegría?
+## ¿Qué opinan los espectadores de medios de comunicación alternativos (la media inglesa, mundo maldini) sobre el nuevo formato de la Liga de Campeones?
 
+El fútbol europeo ha sufrido un gran cambio este año. La competición más seguida del mundo entero, la Liga de Campeones de la UEFA, estrenó un nuevo formato donde entre otras cosas se amplian los equipos participantes a treinta y seís. Estos cambios han generado opiniones polarizadas en los espectadores. A su vez estas opiniones han ido cambiando a lo largo que se ha ido desarrollando el torneo, yendo de negativas a positivas. Sin embargo, todavía existen un gran bloque de retractores.
 
-## 2. Formular una o más consultas para obtener los datos para responder a la pregunta y obtencion de los datos.
+En este proyecto vamos a analizar las **opiniones de espectadores de medios de comunicación alternativos sobre el nuevo formato de la Liga de Campeones**. Para ello vamos a extraer la información de la sección de comentarios de los vídeos de analísis de estos medios de comunicación. Los dos vídeos que vamos a utilizar son:
 
-Para obtener los datos que nos ayudarán a responder a las preguntas vamos a ejecutar el siguiente script que nos ayudará a obtener datos sobre el proyecto:
+* [CHAMPIONS Y EL NUEVO FORMATO, ASÍ ES. ¿OS GUSTA? ¿QUÉ PRETENDE LA UEFA? MI OPINIÓN-Mundo Maldini](https://www.youtube.com/watch?v=x822KmLGDsQ) 
+* [¿FUNCIONA EL NUEVO FORMATO DE LA CHAMPIONS LEAGUE?-La media inglesa](https://www.youtube.com/watch?v=f0CYxwRY0to) 
+
+A la hora de anotar estos datos utilizaremos etiquetas que midan el grado de satisfacción del nuevo formato. Las etiquetas para el análisis de sentimientos serán `POS`, `NEG` y `NT`. También tendremos una etiqueta `IRR` que nos indicará cuando un comentario no tenga que ver con nuestra pregunta de investigación o sea irrelevante.
+
+## Consulta para la obtención de los datos
+
+Para obtener los datos utilizaremos el siguiente script en python que nos ayudará a scrappear la información de la sección de comentarios.
+
+```bash
+python prueba-youtube.py
+```
 
 ```python
 import time
