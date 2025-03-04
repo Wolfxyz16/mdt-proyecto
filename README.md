@@ -9,6 +9,8 @@ En este proyecto vamos a analizar las **opiniones de espectadores de medios de c
 * [CHAMPIONS Y EL NUEVO FORMATO, ASÍ ES. ¿OS GUSTA? ¿QUÉ PRETENDE LA UEFA? MI OPINIÓN-Mundo Maldini](https://www.youtube.com/watch?v=x822KmLGDsQ) 
 * [¿FUNCIONA EL NUEVO FORMATO DE LA CHAMPIONS LEAGUE?-La media inglesa](https://www.youtube.com/watch?v=f0CYxwRY0to) 
 
+Finalmente debido a la cantidad de comentarios en cada video hemos decidido extraer los datos de **La media inglesa**
+
 A la hora de anotar estos datos utilizaremos etiquetas que midan el grado de satisfacción del nuevo formato. Las etiquetas para el análisis de sentimientos serán `POS`, `NEG` y `NT`. También tendremos una etiqueta `IRR` que nos indicará cuando un comentario no tenga que ver con nuestra pregunta de investigación o sea irrelevante.
 
 ## Consulta para la obtención de los datos
@@ -23,7 +25,7 @@ python prueba-youtube.py
 ## 3. Preprocesamiento y anonimización de los datos.
 * Tener en cuenta que, dependiendo de sus datos, es posible que sea necesario eliminar/agregar algunos pasos al preprocesamiento y que es importante adecuar el preprocesamiento al modelo concreto que usamos.
 
-Hemos realizado una seleccion de los comentarios en los que si se habla acerca del nuevo formato y hemos obtenido 197 comentarios que van a ser etiquetados por nuestro equipo. Los comentarios podrán tener las siguientes etiquetas:
+Hemos extraido los comentarios del video y hemos conseguido un conjunto de datos de 464 comentarios. Estos, seran etiquetados por nuestro equipo y podrán tener las siguientes etiquetas:
 
 * Positive [1]
 * Neutral [2]
@@ -34,6 +36,8 @@ Hemos realizado una seleccion de los comentarios en los que si se habla acerca d
 * Elegir las etiquetas adecuadas para responder a la pregunta de investigación.
 * Usar LabelStudio para anotar los datos
 * Guardar en formato json
+
+Hemos realizado una seleccion de los comentarios en los que si se habla acerca del nuevo formato y hemos obtenido cerca de 150 comentarios, que se usaran en el siguiente paso del trabajo. 
 
 ## 5. Dado que no tendrá un conjunto de datos para entrenar un modelo, os aconsejamos usar uno o más de las siguientes opciones:
 * Crear un enfoque basado en el léxico
