@@ -18,6 +18,7 @@ Para obtener los datos utilizaremos el siguiente script en python que nos ayudar
 ```bash
 python prueba-youtube.py
 ```
+⚠️ Es necesario tener chromedriver instalado para poder ejecutar el programa ⚠️ 
 
 ## 3. Preprocesamiento y anonimización de los datos.
 * Tener en cuenta que, dependiendo de sus datos, es posible que sea necesario eliminar/agregar algunos pasos al preprocesamiento y que es importante adecuar el preprocesamiento al modelo concreto que usamos.
