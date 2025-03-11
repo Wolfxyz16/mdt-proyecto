@@ -8,12 +8,22 @@ En este proyecto vamos a analizar las **opiniones de espectadores de medios de c
 
 ## Extracción de datos
 
-Una vez bien definida la pregunta de investigación con la que trabajaremos a lo largo del trabajo, nuestro primer objetivo sera conseguir un conjunto de datos adecuado. Para la obtención de los datos usaremos el script del archivo 'prueba-youtube.py'. Mediante este script, utilizando la libreria webdriver y el ejecutable chromedriver leeremos los comentarios del video que deseamos y crearemos el inicio de la base de datos. 
+Una vez bien definida la pregunta de investigación con la que trabajaremos, nuestro primer objetivo sera conseguir un conjunto de datos adecuado. Para la obtención de los datos usaremos el script del archivo 'prueba-youtube.py'. Mediante este script, utilizando la libreria webdriver y el ejecutable chromedriver leeremos los comentarios del video que deseamos y crearemos el inicio de la base de datos. 
 
 Como primera idea, decidimos extraer comentarios de distintos videos de medios de comunicación diferentes para obtener mas variedad de datos. Sin embargo, debido a que la cantidad de datos que se extrajeron con un solo video nos parecio suficiente, scrappear mas datos.
 
 ```Video
     https://www.youtube.com/watch?v=kuhhT_cBtFU&t=2s
+```
+
+Una vez ejecutado el script, obtuvimos un conjunto de 464 comentarios no etiquetados. Una vez analizado el conjunto de datos, se ha dicidio emplear las siguientes etiquetas:
+
+```Guia de anotación
+    Positivo: Se asignara etiqueta positivo a un comentario, si este ...
+    Negativo:
+    Neutro:
+    Irrelevante:
+
 ```
 
 
