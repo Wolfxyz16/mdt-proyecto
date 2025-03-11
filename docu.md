@@ -19,10 +19,17 @@ Como primera idea, decidimos extraer comentarios de distintos videos de medios d
 Una vez ejecutado el script, obtuvimos un conjunto de 464 comentarios no etiquetados. Una vez analizado el conjunto de datos, se ha dicidio emplear las siguientes etiquetas:
 
 ```Guia de anotación
-    Positivo: Se asignara etiqueta positivo a un comentario, si este ...
-    Negativo:
-    Neutro:
-    Irrelevante:
+   - **Positivo**: Se asignará la etiqueta positivo a un comentario si en este se expresa una opinión favorable sobre el nuevo formato de la Liga de Campeones. Puede incluir elogios, satisfacción o argumentos que justifiquen el cambio de formato.  
+    *Ejemplo: "A mi el nuevo formato me encanta, buen vídeo cracks! Por cierto el directo de ayer divertidísimo"*  
+
+    - **Negativo**: Se asignará esta etiqueta a un comentario si este expresa una opinión de rechazo sobre el nuevo formato de la Liga de Campeones. Puede incluir críticas, descontento o argumentos que expliquen por qué el cambio no les parece correcto.  
+      *Ejemplo: "Sencillamente este formato es una mierda...*  
+
+    - **Neutro**: Se asignará esta etiqueta a un comentario si no expresa una opinión clara sobre el nuevo formato. Se entenderan como neutros los comentarios en los que no se determine una idea clara a favor o en contra del nuevo formato.  
+      *Ejemplo: "El formato tiene cosas que no me gustan, pero el anterior era muuucho peor"*  
+
+    - **Irrelevante**: Se asignará esta etiqueta a un comentario si no está relacionado con el tema del nuevo formato de la Liga de Campeones. Puede incluir comentarios sobre otros temas, bromas, opiniones propias sobre que se deberia de hacer o respuestas sin contenido relevante. 
+      *Ejemplo: "¿Y del formato del bicep de Nacho qué opináis?"*  
 
 ```
 
