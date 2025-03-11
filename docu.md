@@ -12,9 +12,9 @@ Una vez bien definida la pregunta de investigación con la que trabajaremos a lo
 
 Como primera idea, decidimos extraer comentarios de distintos videos de medios de comunicación diferentes para obtener mas variedad de datos. Sin embargo, debido a que la cantidad de datos que se extrajeron con un solo video nos parecio suficiente, scrappear mas datos.
 
-""" video 
+```Video
     https://www.youtube.com/watch?v=kuhhT_cBtFU&t=2s
-"""
+```
 
 
 #### Tareas
