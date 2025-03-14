@@ -69,10 +69,10 @@ F1 Score:   0.2499
 También hemos creado un modelo que asigna las predicciones aleatoriamente. Los resultados de este modelo a lo largo de 50 iteraciones han sido mejores que los obtenidos por la majority class, pero peores que los obtenido por lexicones
 
 ```
-Accuracy medio: 0.3379
-Precision media: 0.3589
-Recall medio: 0.3379
-F1 Score medio: 0.3422
+Accuracy medio:     0.3379
+Precision media:    0.3589
+Recall medio:       0.3379
+F1 Score medio:     0.3422
 ```
 
 ### SVM (*baseline*)
@@ -80,10 +80,10 @@ F1 Score medio: 0.3422
 Para convertir los textos en datos números usamos la técnica TF-IDF que le da un valor a las palabras que más salen en un mismo documento. Con esta representación, entrenamos un modelo de tipo SVM para poder clasificar estos comentarios en diferentes sentimientos. Usando este modelo, hemos obtenido estos resultados: 
 
 ```
-Accuracy: 0.6786
-Precision: 0.6773
-Recall: 0.6786
-F1 Score: 0.6637
+Accuracy:   0.6786
+Precision:  0.6773
+Recall:     0.6786
+F1 Score:   0.6637
 ```
 
 ### Modelo tipo BERT
@@ -93,10 +93,10 @@ El modelo que hemos usado está basado en *bert-base-multilingual* que ha sido f
 Usando este modelo para intentar predecir nuestras etiquetas anotadas nos lleva a los siguientes resultados:
 
 ```
-Accuracy: 0.6357
-Precision: 0.6382
-Recall: 0.6357
-F1 Score: 0.6355
+Accuracy:   0.6357
+Precision:  0.6382
+Recall:     0.6357
+F1 Score:   0.6355
 ```
 
 ### Modelo tipo BERT v2 (re-entrenado)
@@ -104,11 +104,11 @@ F1 Score: 0.6355
 Dividimos los conjuntos de entrenamiento y de test (70/30) y volvemos a entrenar al modelo con el conjunto correspondiente. Los resultado que obtuvo el modelo fueron los siguientes:
 
 ```
-accuracy = 0.7380
+accuracy =  0.7380
 precision = 0.7244
-recall = 0.7380
-F1 = 0.7262
-loss = 0.6703
+recall =    0.7380
+F1 =        0.7262
+loss =      0.6703
 ```
 
 ## Conclusiones
