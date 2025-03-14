@@ -104,11 +104,11 @@ F1 Score:   0.6355
 Dividimos los conjuntos de entrenamiento y de test (70/30) y volvemos a entrenar al modelo con el conjunto correspondiente. Los resultado que obtuvo el modelo fueron los siguientes:
 
 ```
-accuracy =  0.7380
-precision = 0.7244
-recall =    0.7380
-F1 =        0.7262
-loss =      0.6703
+accuracy:   0.7380
+precision:  0.7244
+recall:     0.7380
+F1:         0.7262
+loss:       0.6703
 ```
 
 ## Conclusiones
