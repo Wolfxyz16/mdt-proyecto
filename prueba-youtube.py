@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 
 data = []
-youtube_video_url = "https://www.youtube.com/watch?v=kuhhT_cBtFU&t=2s"
+youtube_video_url = "https://www.youtube.com/watch?v=f0CYxwRY0to"
 
 # Indicar la ruta del chromedriver usando Service
 service = Service(r'/bin/chromedriver')
@@ -31,11 +31,15 @@ with Chrome(service=service) as driver:
     comments = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "#content-text")))
 
     # Extraer los comentarios
-    for comment in comments:
-        data.append(comment.text)
+    for i, comment in enumerate(comments):
+        data.append({
+            "id": i, 
+            "comment": comment.text
+        })
 
 # Convertir a DataFrame
-df = pd.DataFrame(data, columns=['comment'])
+df = pd.DataFrame(data)
+df.to_csv("comentarios.csv", sep=',', index=False, encoding='utf-8')
 
 # Mostrar los primeros 5 comentarios
 print(df.head())
