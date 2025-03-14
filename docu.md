@@ -29,28 +29,92 @@ Una vez ejecutado el script, obtuvimos un conjunto de 464 comentarios no etiquet
 * Irrelevante: Se asignará esta etiqueta a un comentario si no está relacionado con el tema del nuevo formato de la Liga de Campeones. Puede incluir comentarios sobre otros temas, bromas, opiniones propias sobre que se deberia de hacer o respuestas sin contenido relevante.
     * Ejemplo: "¿Y del formato del bicep de Nacho qué opináis?"
 
-[TODO YeLi]
-
-Los tres integrantes del grupo hemos anotado así que podremos calcular nuestro acuerdo.
-
 ## Modelo y evaluación
 
 A la hora de empezar con los modelos en nuestro proyecto hemos empezado definiendo unos modelos *baseline* que nos sirven para poder comparar el *F1-score* de estos modelos con el BERT que vamos a entrenar más adelante.
 
-El primero de nuestros modelos *baseline* está basado en lexicones, se trata del lexicon **NRC Word-Emotion** que tiene una versión traducida al castellano. 
+### Lexicones (*baseline*)
 
-#### Tareas
-[X] Título
+El primero de nuestros modelos *baseline* está basado en lexicones, hemos utilizado dos lexicones distintos que se encuentran traducidos al castellano. Estos lexicones son el **NRC Word-Emotion** y el **AFINN Sentiment Lexicon**:
 
-[X] Introducción: Formalización y motivación de las preguntas de investigación
+```
+NRC
+Accuracy:   0.4000
+Precision:  0.4159
+Recall:     0.4000
+F1 Score:   0.4066
+```
 
-[X] Sistema: Descripción del sistema utilizado (incluye preprocesamiento y postprocesamiento)
+```
+AFINN
+Accuracy:   0.4500
+Precision:  0.5194
+Recall:     0.4500
+F1 Score:   0.4486
+```
 
-[X] Datos: corpus y datos utilizados y descripción sobre su tratamiento.
+### Majority class (*baseline*)
 
-[ ] Resultados y análisis: Resultados y análisis de los experimentos
+A la hora de contar cuál es la clase mayoritaria el resultado ha sido la clase `Negative`. Aplicando esta clase a todas las predicciones hemos obtenido los siguientes resultados:
 
-[ ] Conclusiones
+```
+Accuracy:   0.4214
+Precision:  0.1776
+Recall:     0.4214
+F1 Score:   0.2499
+```
 
-[ ] Referencias
+### Random class (*baseline*)
 
+También hemos creado un modelo que asigna las predicciones aleatoriamente. Los resultados de este modelo a lo largo de 50 iteraciones han sido mejores que los obtenidos por la majority class, pero peores que los obtenido por lexicones
+
+```
+Accuracy medio: 0.3379
+Precision media: 0.3589
+Recall medio: 0.3379
+F1 Score medio: 0.3422
+```
+
+### SVM (*baseline*)
+
+Para convertir los textos en datos números usamos la técnica TF-IDF que le da un valor a las palabras que más salen en un mismo documento. Con esta representación, entrenamos un modelo de tipo SVM para poder clasificar estos comentarios en diferentes sentimientos. Usando este modelo, hemos obtenido estos resultados: 
+
+```
+Accuracy: 0.6786
+Precision: 0.6773
+Recall: 0.6786
+F1 Score: 0.6637
+```
+
+### Modelo tipo BERT
+
+El modelo que hemos usado está basado en *bert-base-multilingual* que ha sido finetuneado para análisis de sentimientos de reviews de productos. Predice el sentimiento dando un resultado de 1 a 5 estrellas. Nosotros hemos interpretado este número de estrellas como cuánto a favor o en contra está el modelo. Si el modelo predice 1 o 2 estrellas este comentario será de tipo negativo; si devuelve 3 estrellas será de tipo neutral; y si devuelve 4 o 5 estrellas será de tipo positivo. 
+
+Usando este modelo para intentar predecir nuestras etiquetas anotadas nos lleva a los siguientes resultados:
+
+```
+Accuracy: 0.6357
+Precision: 0.6382
+Recall: 0.6357
+F1 Score: 0.6355
+```
+
+### Modelo tipo BERT v2 (re-entrenado)
+
+Dividimos los conjuntos de entrenamiento y de test (70/30) y volvemos a entrenar al modelo con el conjunto correspondiente. Los resultado que obtuvo el modelo fueron los siguientes:
+
+```
+accuracy = 0.7380
+precision = 0.7244
+recall = 0.7380
+F1 = 0.7262
+loss = 0.6703
+```
+
+## Conclusiones
+
+Los resultados obtenidos muestran una clara mejora en el rendimiento del modelo a medida que avanzamos desde enfoques más simples, como los lexicones y las clases mayoritarias, hasta modelos más avanzados, como SVM y BERT. Mientras que los modelos *baseline* proporcionaron una referencia inicial, fue con la implementación del modelo BERT re-entrenado cuando se lograron los mejores resultados, alcanzando un *F1-score* de 0.7262, lo que indica una capacidad significativa para clasificar correctamente los comentarios.
+
+Sin embargo, a pesar de estas mejoras, el modelo aún presenta ciertas limitaciones. Algunos comentarios ambiguos o con sarcasmo pueden ser difíciles de clasificar con precisión. Además, una mayor cantidad de datos anotados podría mejorar la capacidad del modelo para identificar matices en las opiniones de los espectadores.
+
+En términos del objetivo del estudio, los resultados indican que, aunque la percepción sobre el nuevo formato de la Liga de Campeones ha evolucionado con el tiempo, todavía existe una polarización considerable entre los seguidores. El análisis de sentimiento sugiere que, si bien hay una tendencia creciente a aceptar el nuevo formato, un sector significativo de los aficionados sigue mostrando resistencia al cambio. Esto refleja la complejidad de las opiniones en torno a modificaciones en competiciones deportivas de gran alcance y la importancia de un análisis detallado para comprender la reacción de los seguidores.
