@@ -30,6 +30,7 @@ Una vez ejecutado el script, obtuvimos un conjunto de 464 comentarios no etiquet
     * Ejemplo: "¿Y del formato del bicep de Nacho qué opináis?"
 
 [TODO YeLi]
+
 Los tres integrantes del grupo hemos anotado así que podremos calcular nuestro acuerdo.
 
 ## Modelo y evaluación
@@ -39,10 +40,17 @@ A la hora de empezar con los modelos en nuestro proyecto hemos empezado definien
 El primero de nuestros modelos *baseline* está basado en lexicones, se trata del lexicon **NRC Word-Emotion** que tiene una versión traducida al castellano. 
 
 #### Tareas
-[ ] Título
-[ ] Introducción: Formalización y motivación de las preguntas de investigación
-[ ] Sistema: Descripción del sistema utilizado (incluye preprocesamiento y postprocesamiento)
-[ ] Datos: corpus y datos utilizados y descripción sobre su tratamiento.
+[X] Título
+
+[X] Introducción: Formalización y motivación de las preguntas de investigación
+
+[X] Sistema: Descripción del sistema utilizado (incluye preprocesamiento y postprocesamiento)
+
+[X] Datos: corpus y datos utilizados y descripción sobre su tratamiento.
+
 [ ] Resultados y análisis: Resultados y análisis de los experimentos
+
 [ ] Conclusiones
+
 [ ] Referencias
+
