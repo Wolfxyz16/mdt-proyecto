@@ -45,3 +45,5 @@ Hemos realizado una seleccion de los comentarios en los que si se habla acerca d
 * Finalmente, también puedes utilizar el aprendizaje por transferencia (transfer learning) si encuentras conjuntos de datos adecuados en otro idioma.
 
 ## 6. Evaluar el modelo, usando la métrica adecuada que corresponde a la tarea.
+
+[Enlace al cuaderno jupyter con la evaluación de los modelos](https://colab.research.google.com/drive/1mwGcELaQ3dWRgcS5zk47b4RCi1Tf4pH0?usp=sharing)
